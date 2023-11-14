@@ -14,6 +14,15 @@ describe('template spec', () => {
 
     cy.visit(websites[RandomIndex])
     cy.get('.cta__saudi').click()
+
+    cy.get('#uncontrolled-tab-example-tab-hotels').click()
+
+    if (RandomIndex==0){
+      cy.get('[data-testid="AutoCompleteInput"]').type("دبي")
+
+    }else if (RandomIndex==1){
+      cy.get('[data-testid="AutoCompleteInput"]').type("dubai")
+    }
    
   })
 })
